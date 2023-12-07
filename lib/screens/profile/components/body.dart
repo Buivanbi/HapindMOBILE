@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hapind/screens/accounts/my_account.dart';
 import 'package:hapind/screens/sign_in/sign_in_screen.dart';
 
 import 'profile_menu.dart';
@@ -16,7 +17,7 @@ class Body extends StatelessWidget {
           ProfileMenu(
             text: "My Account",
             icon: "assets/icons/User Icon.svg",
-            press: () => {},
+            press: ()  {Navigator.pushNamed(context, MyAccount.routeName);},
           ),
           ProfileMenu(
             text: "Notifications",
