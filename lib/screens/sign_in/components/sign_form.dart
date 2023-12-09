@@ -55,6 +55,7 @@ class _SignFormState extends State<SignForm> {
                 value: remember,
                 activeColor: kPrimaryColor,
                 onChanged: (value) {
+                  if(value == null)
                   setState(() {
                     remember = value;
                   });

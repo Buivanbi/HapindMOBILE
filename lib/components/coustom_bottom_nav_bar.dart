@@ -39,12 +39,7 @@ class CustomBottomNavBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                // icon: SvgPicture.asset(
-                //   "assets/icons/Shop Icon.svg",
-                //   color: MenuState.home == selectedMenu
-                //       ? kPrimaryColor
-                //       : inActiveIconColor,
-                // ),
+                
                  icon: Icon(Icons.home,
                   color: MenuState.home == selectedMenu
                        ? kPrimaryColor

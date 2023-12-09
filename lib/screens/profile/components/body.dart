@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
           ProfileMenu(
             text: "My Account",
             icon: "assets/icons/User Icon.svg",
-            press: ()  {Navigator.pushNamed(context, MyAccount.routeName);},
+            press: ()  { Navigator.pushNamed(context, MyAccount.routeName);},
           ),
           ProfileMenu(
             text: "Notifications",
