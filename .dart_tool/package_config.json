@@ -74,6 +74,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/font_awesome_flutter-10.6.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "http",
       "rootUri": "file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/http-1.1.0",
       "packageUri": "lib/",
@@ -236,7 +242,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-12-05T12:47:34.963732Z",
+  "generated": "2023-12-21T11:47:22.625810Z",
   "generator": "pub",
   "generatorVersion": "3.1.5"
 }

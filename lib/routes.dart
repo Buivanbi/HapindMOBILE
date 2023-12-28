@@ -2,7 +2,7 @@
 
 
 import 'package:flutter/widgets.dart';
-import 'package:hapind/screens/accounts/my_account.dart';
+import 'package:hapind/screens/accounts/Edit_account.dart';
 import 'package:hapind/screens/cart/cart_screen.dart';
 import 'package:hapind/screens/chat/chats_screen.dart';
 import 'package:hapind/screens/complete_profile/complete_profile_screen.dart';
@@ -34,7 +34,7 @@ final Map<String, WidgetBuilder> routes = {
   DetailsScreen.routeName: (context) => DetailsScreen(),
   CartScreen.routeName: (context) => CartScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
-  MyAccount.routeName:(context)=> MyAccount(),
+  MyAccount.routeName:(context) => MyAccount(folderName: ""),
   ChatsScreen.routeName:(context) => ChatsScreen(),
    MessagesScreen.routeName:(context)=> MessagesScreen(),
   
