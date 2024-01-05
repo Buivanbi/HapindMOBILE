@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hapind/screens/accounts/Edit_account.dart';
+// ignore: unused_import
+import "package:hapind/screens/accounts/Edit_account.dart";
 
 enum Gender { male, female }
 
-class  GenderButton extends StatefulWidget {
+// ignore: must_be_immutable
+class   GenderButton extends StatefulWidget {
   GenderButton({super.key, required this.callback, required this.folderName});
   Function(String, String) callback;
 
@@ -40,6 +42,7 @@ class _GenderButtonState extends State<GenderButton> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
+                 
                   ListTile(
                       leading: Icon(Icons.male,
                           color: Color.fromARGB(255, 70, 135, 232)),

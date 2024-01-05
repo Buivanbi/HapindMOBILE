@@ -1,47 +1,74 @@
 import 'package:flutter/material.dart';
+enum ExerciseFilter {
+  HipHop,
+  POp,
+  Bolero,
+  Javacom,
+  lyduchao,
+  buingocminh,
+  buiminhtin,
+  Tieuhailua
+}
 
-class TestButton extends StatelessWidget {
+class TestButton extends StatefulWidget {
   const TestButton({super.key, required this.folderName});
-  final String folderName;
+ final String folderName;
+
+  @override
+  State<TestButton> createState() => _TestButtonState();
+  
+}
+
+class _TestButtonState extends State<TestButton> {
+  Set<ExerciseFilter> filters = <ExerciseFilter>{};
+  String folderName = 'Test1';
+  
+
   @override
   Widget build(BuildContext context) {
+    final TextTheme textTheme = Theme.of(context).textTheme;
+   
     return ElevatedButton(
       onPressed: () {
         showModalBottomSheet(
           context: context,
+          shape: const RoundedRectangleBorder(
+            // <-- SEE HERE
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(25.0),
+            ),
+          ),
           builder: (BuildContext context) {
             return Container(
-              padding: EdgeInsets.all(10),
-              height: 200,
-              
+              height: 250,
               // Your bottom sheet content here
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  ListTile(
-                    leading: Icon(Icons.photo),
-                    title: Text('Upload Photo'),
-                    onTap: () {
-                      // Handle uploading photo
-                      Navigator.pop(context);
-                    },
+                  Wrap(
+                    spacing: 5.0,
+                    children:
+                        ExerciseFilter.values.map((ExerciseFilter exercise) {
+                      return FilterChip(
+                        label: Text(exercise.name),
+                        selected: filters.contains(exercise),
+                        onSelected: (bool selected) {
+                          setState(() {
+                            if (selected) {
+                              filters.add(exercise);
+                            } else {
+                              filters.remove(exercise);
+                            }
+                          });
+                        },
+                      );
+                    }).toList(),
                   ),
-                  ListTile(
-                    leading: Icon(Icons.camera),
-                    title: Text('Take a Photo'),
-                    // shape: RoundedRectangleBorder(
-                    //     borderRadius: BorderRadius.circular(15)),
-                    onTap: () {
-                      // Handle taking a photo
-                      Navigator.pop(context);
-                    },
-                  ),
-
                   ElevatedButton(
                     child: const Text('Close'),
-                    // style: style,
                     onPressed: () => Navigator.pop(context),
                   ),
+                 
                   // Add more options as needed
                 ],
               ),
@@ -96,4 +123,4 @@ class TestButton extends StatelessWidget {
       ),
     );
   }
-}
+  }

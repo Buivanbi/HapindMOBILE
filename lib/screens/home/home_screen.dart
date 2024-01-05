@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SliderHome(),
+      body:SliderHome(),
       
       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
       

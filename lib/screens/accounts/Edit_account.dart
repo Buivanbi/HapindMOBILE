@@ -39,7 +39,7 @@ class _MyAccount extends State<MyAccount> {
     availableScreenWidth = MediaQuery.of(context).size.width - 50;
     return Scaffold(
       appBar: AppBar(
-        title: Text("data"),
+        title: Text("Edit Profile", style:TextStyle(color: Colors.orange)),
       ),
       backgroundColor: Colors.grey[100],
       body: Column(children: [
@@ -49,7 +49,7 @@ class _MyAccount extends State<MyAccount> {
             padding: const EdgeInsets.all(25),
             children: [
               const Text(
-                "Recently updated",
+                "Images Uploads",
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -58,32 +58,33 @@ class _MyAccount extends State<MyAccount> {
               const SizedBox(
                 height: 15,
               ),
-
               Row(
                 children: [
-                  buildFileColumn('', '', ''),
+                  buildFileColumn(),
                   SizedBox(
                     width: availableScreenWidth * .03,
                   ),
-                  buildFileColumn('', '', '.'),
+                  buildFileColumn(),
                   SizedBox(
                     width: availableScreenWidth * .03,
                   ),
-                  buildFileColumn('', '', ''),
+                  buildFileColumn(),
                 ],
               ),
-
+              const SizedBox(
+                height: 15,
+              ),
               Row(
                 children: [
-                  buildFileColumn('', '', '.'),
+                  buildFileColumn(),
                   SizedBox(
                     width: availableScreenWidth * .03,
                   ),
-                  buildFileColumn('', '', ''),
+                  buildFileColumn(),
                   SizedBox(
                     width: availableScreenWidth * .03,
                   ),
-                  buildFileColumn('', '', ''),
+                  buildFileColumn(),
                 ],
               ),
               const Divider(
@@ -93,7 +94,7 @@ class _MyAccount extends State<MyAccount> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
-                    "Projects ",
+                    "My preference ",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 18,
@@ -111,9 +112,7 @@ class _MyAccount extends State<MyAccount> {
               SizedBox(
                 height: 10,
               ),
-              GenderButton( folderName:"Gender",
-                callback:callback
-              ),
+              GenderButton(folderName: "Gender", callback: callback),
               SizedBox(
                 height: 10,
               ),
@@ -121,18 +120,15 @@ class _MyAccount extends State<MyAccount> {
               SizedBox(
                 height: 10,
               ),
-              SingerButton(folderName: "SinGer"),
+              SingerButton(
+                folderName: "SinGer",
+              ),
               SizedBox(
                 height: 10,
               ),
               MusicButton(
                 folderName: "Music",
               ),
-              buildProjectRow("Chatbox6"),
-              buildProjectRow("Chatbox7"),
-              buildProjectRow("TimeNote8"),
-              buildProjectRow("Something9"),
-              buildProjectRow("Other"),
             ],
           ),
         )
@@ -200,65 +196,25 @@ class _MyAccount extends State<MyAccount> {
     );
   }
 
-  Column buildFileColumn(String image, String filename, String extension) {
+  Column buildFileColumn() {
     return Column(
       children: [
         Container(
-          width: availableScreenWidth * .31,
-          decoration: BoxDecoration(
-              color: Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(20)),
-          padding: const EdgeInsets.all(38),
-          height: 110,
-          child: Image.network(
-            _avatarUrl,
-            width: double.infinity,
-            fit: BoxFit.cover,
-          ),
-        ),
-        const SizedBox(
-          height: 15,
-        ),
-        // RichText(
-        //   text: TextSpan(
-        //       text: filename,
-        //       style: const TextStyle(
-        //         color: Colors.black,
-        //         fontSize: 14,
-        //       ),
-        //       children: [
-        //         TextSpan(
-        //           text: extension,
-        //           style: const TextStyle(
-        //             color: Colors.grey,
-        //             fontWeight: FontWeight.w300,
-        //             fontSize: 12,
-        //           ),
-        //         ),
-        //       ]),
-        // ),
+            width: availableScreenWidth * .31,
+            decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(20)),
+            padding: const EdgeInsets.all(38),
+            height: 150,
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: IconButton(
+                icon: Icon(Icons.add_circle),
+                color: Theme.of(context).primaryColor,
+                onPressed: () async {},
+              ),
+            )),
       ],
     );
   }
-
-  // Column buildFileSizeChart(
-  //     String title, Color? color, double widthPercentage) {
-  //   return Column(
-  //     crossAxisAlignment: CrossAxisAlignment.start,
-  //     children: [
-  //       Container(
-  //         width: availableScreenWidth * widthPercentage,
-  //         height: 4,
-  //         color: color,
-  //       ),
-  //       const SizedBox(
-  //         height: 8,
-  //       ),
-  //       Text(
-  //         title,
-  //         style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-  //       ),
-  //     ],
-  //   );
-  // }
 }

@@ -3,24 +3,23 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:hapind/models/user_story.dart';
 import 'package:hapind/screens/details/details_page.dart';
+import 'package:story/story_page_view.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 import 'package:swipe_cards/draggable_card.dart';
 import 'package:http/http.dart' as http;
-
 
 class SliderHome extends StatefulWidget {
   const SliderHome(
       {super.key,
       this.items = const [
-       
         "https://res.cloudinary.com/dxlcsubez/image/upload/f_auto,q_auto/e44w6saipufr4qhbtesw",
         "https://res.cloudinary.com/dxlcsubez/image/upload/f_auto,q_auto/lpckjnidqulkymh6r1da",
         // "https://res.cloudinary.com/dxlcsubez/image/upload/f_auto,q_auto/jy124fhdttag8qbdpeus",
         "https://res.cloudinary.com/dxlcsubez/image/upload/f_auto,q_auto/ilr7v5wikdxcla8odvr1",
         "https://res.cloudinary.com/dxlcsubez/image/upload/f_auto,q_auto/k4etvr7nmwerdgd3fals",
         "https://res.cloudinary.com/dxlcsubez/image/upload/f_auto,q_auto/m3gung4bdlzc3fsh0bb5",
-        
       ]});
 
   final List<String> items;
@@ -32,7 +31,6 @@ class SliderHome extends StatefulWidget {
 int currentIndex = 0;
 late CarouselController controller;
 final String url = "https://randomuser.me/api/?results=50";
-
 
 List<SwipeItem> swipeItems = <SwipeItem>[];
 List<int> imageIndexList = List.generate(10, (index) => 0);
@@ -98,40 +96,35 @@ class _SliederState extends State<SliderHome> {
 
   @override
   Widget build(BuildContext context) {
-     
     return Scaffold(
       appBar: AppBar(
-        title: Text("I LOVE YOU HAPIND ",
-        style: TextStyle(color: Color.fromARGB(255, 44, 39, 3)),),
+        title: Text(
+          "I LOVE YOU HAPIND ",
+          style: TextStyle(color: Color.fromARGB(255, 44, 39, 3)),
+        ),
         backgroundColor: Color.fromARGB(255, 216, 216, 216),
         actions: <Widget>[
           IconButton(
-            tooltip: 'Go to the next page',
-            onPressed: () {
-              // đây sẽ thêm một trang search
-              Navigator.push(context, MaterialPageRoute<void>(
-                builder: (BuildContext context) {
-                  return Scaffold(
-                    appBar: AppBar(
-                      title: const Text('Notification'),
-                    ),
-                    body: const Center(
-                      child: Text(
-                        'This is the next page',
-                        style: TextStyle(fontSize: 24),
+              tooltip: 'Go to the next page',
+              onPressed: () {
+                // đây sẽ thêm một trang search
+                Navigator.push(context, MaterialPageRoute<void>(
+                  builder: (BuildContext context) {
+                    return Scaffold(
+                      appBar: AppBar(
+                        title: const Text('Notification'),
                       ),
-                    ),
-                  );
-                },
-              ));
-            },
-            icon:  Icon(CupertinoIcons.bell_fill,
-            color: Colors.red
-
-            
-            )
-           
-          ),
+                      body: const Center(
+                        child: Text(
+                          'This is the next page',
+                          style: TextStyle(fontSize: 24),
+                        ),
+                      ),
+                    );
+                  },
+                ));
+              },
+              icon: Icon(CupertinoIcons.bell_fill, color: Colors.red)),
           IconButton(
             tooltip: 'Go to the next page',
             onPressed: () {
@@ -152,7 +145,9 @@ class _SliederState extends State<SliderHome> {
                 },
               ));
             },
-            icon: const Icon(Icons.brightness_high,  color: Color.fromARGB(255, 0, 0, 0),
+            icon: const Icon(
+              Icons.brightness_high,
+              color: Color.fromARGB(255, 0, 0, 0),
             ),
           ),
         ],
@@ -174,28 +169,64 @@ class _SliederState extends State<SliderHome> {
                             // fit: StackFit.expand,
                             alignment: AlignmentDirectional.topCenter,
                             children: <Widget>[
-                              CarouselSlider(
-                                  items: widget.items
-                                      .map(
-                                        (item) => Image.network(
-                                          item,
-                                          fit: BoxFit.cover,
-                                          width: double.infinity,
-                                        ),
-                                      )
-                                      .toList(),
-                                  options: CarouselOptions(
-                                      height: 900,
-                                      viewportFraction: 1.0,
-                                      aspectRatio: 3.0,
-                                      initialPage: 3,
-                                      enlargeCenterPage: false,
-                                      autoPlay: true,
-                                      onPageChanged: (index, reason) {
-                                        setState(() {
-                                          currentIndex = index;
-                                        });
-                                      })),
+                              StoryPageView(
+                                itemBuilder: (context, pageIndex, storyIndex) {
+                                  final user = users[pageIndex];
+                                  final story = user.stories[storyIndex];
+
+                                  return Stack(children: [
+                                    Positioned.fill(
+                                      child: Container(
+                                          color: Color.fromARGB(
+                                              255, 232, 229, 229)),
+                                    ),
+                                    Positioned.fill(
+                                      top: 1,
+                                      bottom: 1,
+                                      child: Image.network(
+                                        story.imageUrl,
+                                        fit: BoxFit.cover,
+                                        width: double.infinity,
+                                      ),
+                                    ),
+                                  ]);
+                                },
+                                initialStoryIndex: (pageIndex) {
+                                  if (pageIndex == 0) {
+                                    return 0;
+                                  }
+                                  return 0;
+                                },
+                                pageLength: users.length,
+                                storyLength: (int pageIndex) {
+                                  return users[pageIndex].stories.length;
+                                },
+                                onPageLimitReached: () {
+                                  // Navigator.pop(context);
+                                },
+                                // items: widget.items
+                                //     .map(
+                                //       (item) => Image.network(
+                                //         item,
+                                //         fit: BoxFit.cover,
+                                //         width: double.infinity,
+                                //       ),
+                                //     )
+                                //     .toList(),
+                                // options: CarouselOptions(
+                                //     height: 900,
+                                //     viewportFraction: 1.0,
+                                //     aspectRatio: 3.0,
+                                //     initialPage: 3,
+                                //     enlargeCenterPage: false,
+                                //     autoPlay: true,
+                                //     onPageChanged: (index, reason) {
+                                //       setState(() {
+                                //         currentIndex = index;
+                                //       }
+                                //       );
+                                //     }
+                              ),
                               Container(
                                 margin: const EdgeInsets.all(1.0),
                                 decoration: const BoxDecoration(
@@ -300,15 +331,16 @@ class _SliederState extends State<SliderHome> {
                                                       .toString(),
                                                   email: usersData[index]
                                                       ['email'],
-                                                //  _avatarUr: usersData[index]
-                                                //       ['picture']['large'],
+                                                  //  _avatarUr: usersData[index]
+                                                  //       ['picture']['large'],
                                                 ),
                                               ),
                                             );
                                           },
                                           icon: const Icon(
                                             Icons.directions_sharp,
-                                            color: Color.fromARGB(255, 189, 81, 225),
+                                            color: Color.fromARGB(
+                                                255, 189, 81, 225),
                                           ),
                                           label: const Text(
                                             "Profile",
@@ -406,8 +438,9 @@ class _SliederState extends State<SliderHome> {
                                 ),
                                 onPressed: () {
                                   matchEngine.currentItem?.superLike();
-                                    // ignore: unused_label
-                                    child:const Text("Superlike");
+                                  // ignore: unused_label
+                                  child:
+                                  const Text("Superlike");
                                 },
                                 //  child:const Text("Superlike"),
                               ),
