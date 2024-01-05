@@ -56,6 +56,7 @@ class _SingerButtonState extends State<SingerButton> {
           builder: (BuildContext context) {
             return Container(
               height: 250,
+                width: 500,
               // Your bottom sheet content here
               child: Column(
                 mainAxisSize: MainAxisSize.min,

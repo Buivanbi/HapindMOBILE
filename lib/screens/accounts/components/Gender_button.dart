@@ -61,8 +61,8 @@ class _GenderButtonState extends State<GenderButton> {
                     leading: Icon(Icons.female,
                         color: Color.fromARGB(255, 198, 5, 5)),
                     title: Text('Female'),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)),
+                    // shape: RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.circular(15)),
                     onTap: ()
                         {
                            setState(() {

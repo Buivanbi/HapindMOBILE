@@ -98,6 +98,7 @@ class _SliederState extends State<SliderHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         automaticallyImplyLeading: false, 
         title: Text(
           "I LOVE YOU HAPIND ",
           style: TextStyle(color: Color.fromARGB(255, 44, 39, 3)),
@@ -347,7 +348,7 @@ class _SliederState extends State<SliderHome> {
                                             style: TextStyle(
                                               color: Color.fromARGB(
                                                   255, 219, 64, 64),
-                                              fontSize: 12.0,
+                                              fontSize: 10.0,
                                               overflow: TextOverflow.ellipsis,
                                               fontWeight: FontWeight.bold,
                                             ),

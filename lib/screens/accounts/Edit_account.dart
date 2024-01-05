@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:hapind/screens/accounts/components/%20family_buttton.dart';
+import 'package:hapind/screens/accounts/components/%20purpose_button.dart';
+import 'package:hapind/screens/accounts/components/Exercise_button.dart';
 import 'package:hapind/screens/accounts/components/Gender_button.dart';
+import 'package:hapind/screens/accounts/components/Work_button.dart';
+import 'package:hapind/screens/accounts/components/habit_button.dart';
+import 'package:hapind/screens/accounts/components/hobby_button.dart';
+import 'package:hapind/screens/accounts/components/language_button.dart';
+import 'package:hapind/screens/accounts/components/literacy_button.dart';
 import 'package:hapind/screens/accounts/components/music_button.dart';
+import 'package:hapind/screens/accounts/components/pet_button.dart';
 import 'package:hapind/screens/accounts/components/singer_button.dart';
+import 'package:hapind/screens/accounts/components/smoking_button.dart';
 import 'package:hapind/screens/accounts/components/test_button.dart';
 
 class MyAccount extends StatefulWidget {
@@ -39,7 +49,7 @@ class _MyAccount extends State<MyAccount> {
     availableScreenWidth = MediaQuery.of(context).size.width - 50;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit Profile", style:TextStyle(color: Colors.orange)),
+        title: Text("Edit Profile", style: TextStyle(color: Colors.orange)),
       ),
       backgroundColor: Colors.grey[100],
       body: Column(children: [
@@ -90,6 +100,7 @@ class _MyAccount extends State<MyAccount> {
               const Divider(
                 height: 60,
               ),
+              // số ít
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
@@ -116,7 +127,47 @@ class _MyAccount extends State<MyAccount> {
               SizedBox(
                 height: 10,
               ),
-              TestButton(folderName: "Test"),
+              WorkButton(folderName: "Work"),
+              SizedBox(
+                height: 10,
+              ),
+              SmokingButton(folderName: "Smoking"),
+              SizedBox(
+                height: 10,
+              ),
+              PurposeButton(folderName: 'Purpose'),
+              SizedBox(
+                height: 10,
+              ),
+              LiteracyButton(folderName: 'Literacy'),
+              SizedBox(
+                height: 10,
+              ),
+              HabitButton(folderName: 'Habit'),
+              SizedBox(
+                height: 10,
+              ),
+              FamilyButton(folderName: ' Family '),
+              //số nhiều
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    "My preference số nhiều ",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              MusicButton(
+                folderName: "Music",
+              ),
               SizedBox(
                 height: 10,
               ),
@@ -126,9 +177,19 @@ class _MyAccount extends State<MyAccount> {
               SizedBox(
                 height: 10,
               ),
-              MusicButton(
-                folderName: "Music",
+              PetButton(folderName: 'Pet'),
+              SizedBox(
+                height: 10,
               ),
+              LanguageButton(folderName: "Language"),
+              SizedBox(
+                height: 10,
+              ),
+              HobbyButton(folderName: "Hobby"),
+              SizedBox(
+                height: 10,
+              ),
+              ExerciseButton(folderName: "Exercise"),
             ],
           ),
         )

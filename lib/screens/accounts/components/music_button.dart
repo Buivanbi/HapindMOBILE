@@ -35,21 +35,19 @@ class _MusicButtonState extends State<MusicButton> {
       onPressed: () {
         showModalBottomSheet(
           context: context,
-          shape: const RoundedRectangleBorder(
-            // <-- SEE HERE
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(25.0),
-            ),
-          ),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           builder: (BuildContext context) {
             return Container(
               height: 250,
+              width: 500,
               // Your bottom sheet content here
               child: Column(
                 mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Wrap(
-                    spacing: 5.0,
+                    spacing: 3.0,
                     children:
                         ExerciseFilter.values.map((ExerciseFilter exercise) {
                       return FilterChip(
@@ -71,7 +69,7 @@ class _MusicButtonState extends State<MusicButton> {
                     child: const Text('Close'),
                     onPressed: () => Navigator.pop(context),
                   ),
-                 
+
                   // Add more options as needed
                 ],
               ),
@@ -85,12 +83,12 @@ class _MusicButtonState extends State<MusicButton> {
         side: MaterialStateProperty.all<BorderSide>(
           // Đường viền của button
           BorderSide(
-            color: const Color.fromARGB(255, 216, 214, 214),
+            color: Color.fromARGB(255, 167, 165, 165),
           ),
         ),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(30),
           ),
         ),
       ),

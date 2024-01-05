@@ -22,7 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		+SRhUF47LxJZdj0wgURwOk9KhDI=
+		JqD7lQ9IN9i1Plh4ENZFq3zcp+c=
 		</data>
 		<key>flutter_assets/assets/fonts/muli/Muli-Bold.ttf</key>
 		<data>
@@ -282,11 +282,11 @@
 		</data>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<data>
-		gLUZUNbndCKs00+ddk9hgePiKHQ=
+		nw+E37kUwAhEjreDOr+tAMkE1l8=
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		nxLIOCxigDsTrAEhGHIvDN/tOu8=
+		LRMmd0Akud9XuJbWRlhAeIip1jc=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -310,11 +310,11 @@
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
-		KL+7f3IYR/Y9WDlxxUeDmgGoluc=
+		ZiX/DByz8A2xHGmziP9zxnaRW9M=
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
-		+HsWKuOINTMijVvKruokFpzcml8=
+		a2+vL3OjyaHMR0FTauiYquhV9sI=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -344,7 +344,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4dY6gB8T9XM6rzUVNMJj7QEqN4OlnU4ruxNEmOHtEqI=
+			PstM+wolZ8u6gmmyUrlvkmSAFHWDjNM7wfqeCtZws6o=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/fonts/muli/Muli-Bold.ttf</key>
@@ -799,14 +799,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rnNRNqkjfwz6o+ECah8gei8ooCiw3YLryTTvYxQ0uLg=
+			FOw1LIVu9y55y1lHNQfo8xUzEEulgGNB/6MrXKHAckA=
 			</data>
 		</dict>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uj919Rl/JSd+WdYvHwrBuHkeYlpxgQBg7PjD4RlbF08=
+			2lI/ejKHGOe4lRmyVOFtVx/DDDP+Wc3yQwBDk8CR88E=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -848,14 +848,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v6u8YtYjslOLIIb1rrgcOW817fxVEiBaprKuV+f6FpY=
+			49CVVGC0BQtpsarzJBllXjeVYst0OhUVq6Izlb7jGMQ=
 			</data>
 		</dict>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XRpcsR0vWGkDzG+35GjjzaJtqN3CuV3azmWWPti/o3M=
+			RgR9M7Bn1a7Hy2G3Rta4Gd5d2Nmpl6yJanVizmPi2zY=
 			</data>
 		</dict>
 	</dict>

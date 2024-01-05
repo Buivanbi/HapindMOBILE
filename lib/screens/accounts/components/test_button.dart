@@ -41,6 +41,7 @@ class _TestButtonState extends State<TestButton> {
           builder: (BuildContext context) {
             return Container(
               height: 250,
+                width: 500,
               // Your bottom sheet content here
               child: Column(
                 mainAxisSize: MainAxisSize.min,

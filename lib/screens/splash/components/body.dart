@@ -14,31 +14,19 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
-    {
-      "text": "Welcome to Hapind ",
-      "image": "assets/images/splash.png"
-    },
-    {
-      "text":
-          "Welcome to Hapind",
-      "image": "assets/images/splash9.png"
-    },
-    {
-      "text": "Welcome to Hapind",
-      "image": "assets/images/splash7.png"
-    },
+    {"text": "Welcome to Hapind ", "image": "assets/images/splash.png"},
+    {"text": "Welcome to Hapind", "image": "assets/images/splash9.png"},
+    {"text": "Welcome to Hapind", "image": "assets/images/splash7.png"},
   ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: SizedBox(
-        
         width: double.infinity,
-        
         child: Column(
           children: <Widget>[
             Expanded(
-              flex: 6,
+              flex: 9,
               child: PageView.builder(
                 onPageChanged: (value) {
                   setState(() {
@@ -66,8 +54,8 @@ class _BodyState extends State<Body> {
                         splashData.length,
                         (index) => AnimatedContainer(
                           duration: kAnimationDuration,
-                          margin: EdgeInsets.only(right: 5),
-                          height: 6,
+                          margin: EdgeInsets.only(right: 1),
+                          height: 1,
                           width: currentPage == index ? 20 : 6,
                           decoration: BoxDecoration(
                             color: currentPage == index
