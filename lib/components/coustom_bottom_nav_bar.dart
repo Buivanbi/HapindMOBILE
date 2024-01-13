@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hapind/screens/home/home_screen.dart';
 import 'package:hapind/screens/chat/chats_screen.dart';
+import 'package:hapind/screens/home/home_screen.dart';
 import 'package:hapind/screens/profile/profile_screen.dart';
-import 'package:hapind/screens/search/search_screen.dart';
 
 import '../constants.dart';
 import '../enums.dart';
@@ -51,7 +50,7 @@ class CustomBottomNavBar extends StatelessWidget {
               IconButton(
                 // icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
                 icon: Icon(Icons.search),
-                onPressed: () =>Navigator.pushNamed(context,SearchScreen.routeName),
+                onPressed: () {},
               ),
               IconButton(
                 icon: Icon(Icons.message),

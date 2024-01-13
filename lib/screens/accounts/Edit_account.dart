@@ -1,17 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hapind/screens/accounts/components/%20family_buttton.dart';
-import 'package:hapind/screens/accounts/components/%20purpose_button.dart';
-import 'package:hapind/screens/accounts/components/Exercise_button.dart';
 import 'package:hapind/screens/accounts/components/Gender_button.dart';
-import 'package:hapind/screens/accounts/components/Work_button.dart';
-import 'package:hapind/screens/accounts/components/habit_button.dart';
-import 'package:hapind/screens/accounts/components/hobby_button.dart';
-import 'package:hapind/screens/accounts/components/language_button.dart';
-import 'package:hapind/screens/accounts/components/literacy_button.dart';
 import 'package:hapind/screens/accounts/components/music_button.dart';
-import 'package:hapind/screens/accounts/components/pet_button.dart';
 import 'package:hapind/screens/accounts/components/singer_button.dart';
-import 'package:hapind/screens/accounts/components/smoking_button.dart';
 import 'package:hapind/screens/accounts/components/test_button.dart';
 
 class MyAccount extends StatefulWidget {
@@ -49,7 +39,7 @@ class _MyAccount extends State<MyAccount> {
     availableScreenWidth = MediaQuery.of(context).size.width - 50;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit Profile", style: TextStyle(color: Colors.orange)),
+        title: Text("data"),
       ),
       backgroundColor: Colors.grey[100],
       body: Column(children: [
@@ -59,7 +49,7 @@ class _MyAccount extends State<MyAccount> {
             padding: const EdgeInsets.all(25),
             children: [
               const Text(
-                "Images Uploads",
+                "Recently updated",
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -68,44 +58,42 @@ class _MyAccount extends State<MyAccount> {
               const SizedBox(
                 height: 15,
               ),
+
               Row(
                 children: [
-                  buildFileColumn(),
+                  buildFileColumn('', '', ''),
                   SizedBox(
                     width: availableScreenWidth * .03,
                   ),
-                  buildFileColumn(),
+                  buildFileColumn('', '', '.'),
                   SizedBox(
                     width: availableScreenWidth * .03,
                   ),
-                  buildFileColumn(),
+                  buildFileColumn('', '', ''),
                 ],
               ),
-              const SizedBox(
-                height: 15,
-              ),
+
               Row(
                 children: [
-                  buildFileColumn(),
+                  buildFileColumn('', '', '.'),
                   SizedBox(
                     width: availableScreenWidth * .03,
                   ),
-                  buildFileColumn(),
+                  buildFileColumn('', '', ''),
                   SizedBox(
                     width: availableScreenWidth * .03,
                   ),
-                  buildFileColumn(),
+                  buildFileColumn('', '', ''),
                 ],
               ),
               const Divider(
                 height: 60,
               ),
-              // số ít
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
-                    "My preference ",
+                    "Projects ",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 18,
@@ -123,73 +111,28 @@ class _MyAccount extends State<MyAccount> {
               SizedBox(
                 height: 10,
               ),
-              GenderButton(folderName: "Gender", callback: callback),
+              GenderButton( folderName:"Gender",
+                callback:callback
+              ),
               SizedBox(
                 height: 10,
               ),
-              WorkButton(folderName: "Work"),
+              TestButton(folderName: "Test"),
               SizedBox(
                 height: 10,
               ),
-              SmokingButton(folderName: "Smoking"),
-              SizedBox(
-                height: 10,
-              ),
-              PurposeButton(folderName: 'Purpose'),
-              SizedBox(
-                height: 10,
-              ),
-              LiteracyButton(folderName: 'Literacy'),
-              SizedBox(
-                height: 10,
-              ),
-              HabitButton(folderName: 'Habit'),
-              SizedBox(
-                height: 10,
-              ),
-              FamilyButton(folderName: ' Family '),
-              //số nhiều
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
-                    "My preference số nhiều ",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
+              SingerButton(folderName: "SinGer"),
               SizedBox(
                 height: 10,
               ),
               MusicButton(
                 folderName: "Music",
               ),
-              SizedBox(
-                height: 10,
-              ),
-              SingerButton(
-                folderName: "SinGer",
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              PetButton(folderName: 'Pet'),
-              SizedBox(
-                height: 10,
-              ),
-              LanguageButton(folderName: "Language"),
-              SizedBox(
-                height: 10,
-              ),
-              HobbyButton(folderName: "Hobby"),
-              SizedBox(
-                height: 10,
-              ),
-              ExerciseButton(folderName: "Exercise"),
+              buildProjectRow("Chatbox6"),
+              buildProjectRow("Chatbox7"),
+              buildProjectRow("TimeNote8"),
+              buildProjectRow("Something9"),
+              buildProjectRow("Other"),
             ],
           ),
         )
@@ -257,25 +200,65 @@ class _MyAccount extends State<MyAccount> {
     );
   }
 
-  Column buildFileColumn() {
+  Column buildFileColumn(String image, String filename, String extension) {
     return Column(
       children: [
         Container(
-            width: availableScreenWidth * .31,
-            decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(20)),
-            padding: const EdgeInsets.all(38),
-            height: 150,
-            child: Align(
-              alignment: Alignment.bottomRight,
-              child: IconButton(
-                icon: Icon(Icons.add_circle),
-                color: Theme.of(context).primaryColor,
-                onPressed: () async {},
-              ),
-            )),
+          width: availableScreenWidth * .31,
+          decoration: BoxDecoration(
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(20)),
+          padding: const EdgeInsets.all(38),
+          height: 110,
+          child: Image.network(
+            _avatarUrl,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        // RichText(
+        //   text: TextSpan(
+        //       text: filename,
+        //       style: const TextStyle(
+        //         color: Colors.black,
+        //         fontSize: 14,
+        //       ),
+        //       children: [
+        //         TextSpan(
+        //           text: extension,
+        //           style: const TextStyle(
+        //             color: Colors.grey,
+        //             fontWeight: FontWeight.w300,
+        //             fontSize: 12,
+        //           ),
+        //         ),
+        //       ]),
+        // ),
       ],
     );
   }
+
+  // Column buildFileSizeChart(
+  //     String title, Color? color, double widthPercentage) {
+  //   return Column(
+  //     crossAxisAlignment: CrossAxisAlignment.start,
+  //     children: [
+  //       Container(
+  //         width: availableScreenWidth * widthPercentage,
+  //         height: 4,
+  //         color: color,
+  //       ),
+  //       const SizedBox(
+  //         height: 8,
+  //       ),
+  //       Text(
+  //         title,
+  //         style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+  //       ),
+  //     ],
+  //   );
+  // }
 }
