@@ -374,7 +374,8 @@ class _SliederState extends State<SliderHome> {
                           scaffoldKey.currentState!.showSnackBar(const SnackBar(
                             content: Text("Stack Finished"),
                             duration: Duration(milliseconds: 500),
-                          ));
+                          )
+                          );
                         },
                         itemChanged: (SwipeItem item, int index) {
                           print("item: ${item.content.text}, index: $index");

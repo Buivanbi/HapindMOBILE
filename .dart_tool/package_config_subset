@@ -26,6 +26,10 @@ collection
 2.18
 file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/collection-1.18.0/
 file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/collection-1.18.0/lib/
+crypto
+2.19
+file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/crypto-3.0.3/
+file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/crypto-3.0.3/lib/
 cupertino_icons
 2.19
 file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.6/
@@ -34,6 +38,10 @@ fake_async
 2.12
 file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/fake_async-1.3.1/
 file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/fake_async-1.3.1/lib/
+faker
+2.18
+file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/faker-2.1.0/
+file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/faker-2.1.0/lib/
 flutter_svg
 2.19
 file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/flutter_svg-2.0.9/
@@ -160,8 +168,8 @@ file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/xml-6.5.0/
 file:///Users/hailuatieu/.pub-cache/hosted/pub.dev/xml-6.5.0/lib/
 hapind
 3.0
-file:///Users/hailuatieu/Desktop/group01/HapindMobile/
-file:///Users/hailuatieu/Desktop/group01/HapindMobile/lib/
+file:///Users/hailuatieu/Desktop/group010/HapindMobile/
+file:///Users/hailuatieu/Desktop/group010/HapindMobile/lib/
 sky_engine
 3.2
 file:///Users/hailuatieu/flutter/bin/cache/pkg/sky_engine/

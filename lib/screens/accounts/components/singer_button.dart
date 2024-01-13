@@ -42,6 +42,7 @@ class _SingerButtonState extends State<SingerButton> {
   
   @override
   Widget build(BuildContext context) {
+     // ignore: unused_local_variable
      final TextTheme textTheme = Theme.of(context).textTheme;
     return ElevatedButton(
       onPressed: () {

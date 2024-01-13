@@ -26,6 +26,7 @@ class _TestButtonState extends State<TestButton> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final TextTheme textTheme = Theme.of(context).textTheme;
    
     return ElevatedButton(
